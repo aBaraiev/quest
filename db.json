@@ -1,0 +1,79 @@
+{
+  "questionnaires": [
+    {
+      "id": "gotech-questionnaire",
+      "questName": "GoTech Questionnaire",
+      "questInfo": "Show me what you got!",
+      "questions": [
+        {
+          "questionId": 1,
+          "isRequired": true,
+          "wording": "What language is your favorite?",
+          "options": [
+            {
+              "type": "radio",
+              "wording": "JavaScript",
+              "hasUserInput": false
+            },
+            {
+              "type": "radio",
+              "wording": "TypeScript",
+              "hasUserInput": false,
+              "conditionalQuestion": {
+                "questionId": "1c",
+                "wording": "Why do you like typescript?",
+                "options": [
+                  {
+                    "type": "text"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "radio",
+              "wording": "CoffeeScript",
+              "hasUserInput": false
+            }
+          ]
+        },
+        {
+          "questionId": 2,
+          "isRequired": false,
+          "wording": "What do you like about programming?",
+          "options": [
+            {
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "questionId": 3,
+          "isRequired": true,
+          "wording": "How was the assigment?",
+          "options": [
+            {
+              "type": "radio",
+              "wording": "Easy",
+              "hasUserInput": false
+            },
+            {
+              "type": "radio",
+              "wording": "Normal",
+              "hasUserInput": false
+            },
+            {
+              "type": "radio",
+              "wording": "Hard",
+              "hasUserInput": false
+            },
+            {
+              "type": "radio",
+              "wording": "Other",
+              "hasUserInput": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
