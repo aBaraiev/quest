@@ -1,0 +1,1 @@
+export const GOTECH_QUESTIONNAIRE = 'gotech-questionnaire';
