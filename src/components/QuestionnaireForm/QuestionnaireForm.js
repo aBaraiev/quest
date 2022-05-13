@@ -16,9 +16,12 @@ const QuestionnaireForm = ({questions}) => {
     const checkRequiredAnswers = (requiredAnswersIds) => {
         cleanEmptyAnswers(answers);
         const answeredQuestionsIds = Object.keys(answers);
-        return answeredQuestionsIds.filter(answer => requiredAnswersIds.includes(answer)).length
-            === requiredAnswersIds.length
+        return answeredQuestionsIds.filter(answer =>
+            requiredAnswersIds.includes(+answer))
+            .length === requiredAnswersIds.length
     }
+
+    const clearAnswers = () => setAnswers({});
 
     const handleFormSubmit = e => {
         e.preventDefault();
@@ -26,8 +29,8 @@ const QuestionnaireForm = ({questions}) => {
         if (checkRequiredAnswers(requiredQuestions)) {
             //proceed w/ sending answers to the server
             console.log(answers);
+            clearAnswers();
             alert('Submitted!');
-            setAnswers({});
         } else {
             alert('Please, answer all required questions first');
         }

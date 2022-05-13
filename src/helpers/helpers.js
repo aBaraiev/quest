@@ -9,7 +9,7 @@ export const cleanEmptyAnswers = answers => {
 
 export const getRequiredQuestions = questions => {
     const requiredQuestions = [];
-    for (let q in questions) {
+    for (let q of questions) {
         if (q.isRequired) {
             requiredQuestions.push(q.questionId);
         }
